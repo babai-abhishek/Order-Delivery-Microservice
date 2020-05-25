@@ -8,18 +8,22 @@
 		<version>2.3.0.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>order-delivery-services</groupId>
-	<artifactId>order</artifactId>
+	<groupId>order-delivery-service</groupId>
+	<artifactId>order-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Order-Service</name>
+	<name>Sales-order</name>
 	<description>Demo project for Spring Boot</description>
-	<packaging>jar</packaging>
 
+	<packaging>jar</packaging>
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
 
 	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
