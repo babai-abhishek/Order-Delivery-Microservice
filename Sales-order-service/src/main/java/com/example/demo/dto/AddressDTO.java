@@ -1,5 +1,8 @@
 package com.example.demo.dto;
 
+import javax.persistence.Embeddable;
+
+@Embeddable
 public class AddressDTO {
 
     private String number;

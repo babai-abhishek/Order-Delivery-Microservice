@@ -6,7 +6,7 @@ spring:
     name: order-service
   kafka:
     producer:
-      bootstrap-servers: kafkabroker:9092
+      bootstrap-servers: localhost:9092
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
   datasource:
@@ -16,8 +16,10 @@ spring:
     password:
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: true
   h2:
-    console: true
+    console:
+      enabled: true
 
 
 

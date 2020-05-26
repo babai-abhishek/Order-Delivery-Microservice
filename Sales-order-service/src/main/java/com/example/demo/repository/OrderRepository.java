@@ -1,7 +1,9 @@
 package com.example.demo.repository;
 
-import com.example.demo.entity.Order;
+import com.example.demo.entity.Orders;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
 
-public interface OrderRepository extends CrudRepository<Order, Integer> {
+@Repository
+public interface OrderRepository extends CrudRepository<Orders, String> {
 }
