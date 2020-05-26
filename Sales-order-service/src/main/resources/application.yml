@@ -1,0 +1,24 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: order-service
+  kafka:
+    producer:
+      bootstrap-servers: kafkabroker:9092
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+  datasource:
+    url: jdbc:h2:mem:orderDB
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+  h2:
+    console: true
+
+
+
+
