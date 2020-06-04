@@ -1,6 +1,6 @@
 package com.example.demo.controller;
 
-import com.example.demo.dto.OrderDTO;
+import com.example.demo.entity.Orders;
 import com.example.demo.port.IOrderServiceApi;
 import com.example.demo.service.OrderService;
 import io.swagger.annotations.Api;
@@ -19,17 +19,17 @@ public class OrderController implements IOrderServiceApi {
     OrderService orderService;
 
     @Override
-    public OrderDTO create(OrderDTO orderDTO) {
-        return orderService.createOrder(orderDTO);
+    public Orders create(Orders orders) {
+        return orderService.createOrder(orders);
     }
 
     @Override
-    public OrderDTO view(String id) {
-        return orderService.getOrderById(id);
+    public Orders view(String id) {
+        return orderService.getOrderById(Long.parseLong(id));
     }
 
     @Override
-    public List<OrderDTO> viewAll() {
+    public List<Orders> viewAll() {
         return orderService.getOrderList();
     }
 }

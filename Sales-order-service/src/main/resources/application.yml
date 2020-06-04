@@ -9,17 +9,38 @@ spring:
       bootstrap-servers: localhost:9092
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
+#  datasource:
+#    url: jdbc:h2:mem:orderDB
+#    driver-class-name: org.h2.Driver
+#    username: sa
+#    password:
+#  jpa:
+#    database-platform: org.hibernate.dialect.H2Dialect
+#    show-sql: true
+#    generate-ddl: true
+#    open-in-view: true
+#    hibernate:
+#      naming:
+#        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+#  h2:
+#    console:
+#      enabled: true
+
   datasource:
-    url: jdbc:h2:mem:orderDB
-    driver-class-name: org.h2.Driver
-    username: sa
-    password:
+      url: jdbc:mysql://localhost:3306/Sales-order
+      username: root
+      password:
   jpa:
-    database-platform: org.hibernate.dialect.H2Dialect
     show-sql: true
-  h2:
-    console:
-      enabled: true
+    hibernate:
+      ddl-auto: create
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+        format_sql: true
+        show-sql: true
 
 
 

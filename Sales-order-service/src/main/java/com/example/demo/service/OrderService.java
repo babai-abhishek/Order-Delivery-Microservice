@@ -1,7 +1,7 @@
 package com.example.demo.service;
 
-import com.example.demo.dto.OrderDTO;
 import com.example.demo.dto.type.OrderStatusType;
+import com.example.demo.entity.Hamburger;
 import com.example.demo.entity.Orders;
 import com.example.demo.port.IOrderServicePublish;
 import com.example.demo.repository.OrderRepository;
@@ -25,43 +25,44 @@ public class OrderService {
     @Autowired
     DozerBeanMapper dozer;
 
-    public OrderDTO createOrder(OrderDTO orderDTO){
+    public Orders createOrder(Orders order){
 
-        Orders orders =new Orders();
-        dozer.map(orderDTO, orders);
-        orders.setOrderStatus(OrderStatusType.WAITING);
-        orders.setStatusDescription(OrderStatusType.WAITING.name());
+        order.setOrderStatus(OrderStatusType.WAITING);
 
-        orders =orderRepository.save(orders);
+     //   order =orderRepository.save(order);
 
-        service.sendOrder(orders);
+        List<Hamburger> hamburgers = new ArrayList<>(order.getHamburgerList());
 
-        OrderDTO dto=dozer.map(orders,OrderDTO.class);
+        for(Hamburger hamburger: hamburgers){
 
-        return dto;
+            hamburger.setOrders(order);
+
+      //      hamburgerRepository.save(hamburger);
+        }
+
+        order = orderRepository.save(order);
+
+        service.sendOrder(order);
+
+        return order;
 
     }
 
-    public OrderDTO getOrderById(String id){
+    public Orders getOrderById(long id){
 
         Optional<Orders> order = orderRepository.findById(id);
 
         if(order.isPresent())
-            return dozer.map(order.get(),OrderDTO.class);
+            return dozer.map(order.get(),Orders.class);
 
         return null;
     }
 
-    public List<OrderDTO> getOrderList(){
+    public List<Orders> getOrderList(){
 
-        List<OrderDTO> orderDTOS = new ArrayList<>();
 
         List<Orders> orders = (List<Orders>) orderRepository.findAll();
 
-        for(Orders order : orders){
-            orderDTOS.add(dozer.map(order,OrderDTO.class));
-        }
-
-        return orderDTOS;
+        return orders;
     }
 }

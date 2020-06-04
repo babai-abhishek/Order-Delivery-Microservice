@@ -1,6 +1,6 @@
 package com.example.demo.service;
 
-import com.example.demo.dto.OrderDTO;
+import com.example.demo.entity.Orders;
 import com.example.demo.port.IOrderServicePublish;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -24,7 +24,7 @@ public class OrderPublishService implements IOrderServicePublish {
     private ObjectMapper objectMapper;
 
     @Override
-    public void sendOrder(OrderDTO orderDTO) {
+    public void sendOrder(Orders orderDTO) {
         try {
             kafkaTemplate.send(TOPIC,objectMapper.writeValueAsString(orderDTO));
         } catch (JsonProcessingException e) {
