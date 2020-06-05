@@ -1,4 +1,4 @@
-package com.example.demo.dto.type;
+package com.example.demo.entity.type;
 
 public enum HamburgerType {
     ANGUS("ANGUS"),SCOTTONA("SCOTTONA"),CHIANINA("CHIANINA"),KOBE("KOBE"),VITELLONE("VITELLONE");
