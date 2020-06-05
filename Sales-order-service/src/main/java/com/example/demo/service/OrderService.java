@@ -29,17 +29,6 @@ public class OrderService {
 
         order.setOrderStatus(OrderStatusType.WAITING);
 
-     //   order =orderRepository.save(order);
-
-        List<Hamburger> hamburgers = new ArrayList<>(order.getHamburgerList());
-
-        for(Hamburger hamburger: hamburgers){
-
-            hamburger.setOrders(order);
-
-      //      hamburgerRepository.save(hamburger);
-        }
-
         order = orderRepository.save(order);
 
         service.sendOrder(order);
