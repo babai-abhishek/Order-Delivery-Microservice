@@ -14,7 +14,7 @@ import java.io.IOException;
 public class KitchenConsumeOrderService implements IKitchenServiceMessaging {
 
     @Autowired
-    private KitchenService kitchenService;
+    private KitchenEventConsumeService kitchenEventConsumeService;
 
     @Autowired
     private ObjectMapper objectMapper;
@@ -28,7 +28,7 @@ public class KitchenConsumeOrderService implements IKitchenServiceMessaging {
         try {
             Orders orderDTO=objectMapper.readValue(content, Orders.class);
 
-            boolean started=kitchenService.process(orderDTO);
+            boolean started= kitchenEventConsumeService.process(orderDTO);
             kithcenPublisher.sendToOrderCallback(orderDTO);
 
             if(started) {

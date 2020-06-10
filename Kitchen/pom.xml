@@ -4,12 +4,12 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-		<groupId>order-delivery-services</groupId>
+		<groupId>order-address-services</groupId>
 		<artifactId>demo-sales</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 
-	<groupId>order-delivery-services</groupId>
+	<groupId>order-address-services</groupId>
 	<artifactId>kitchen</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Kitchen-service</name>

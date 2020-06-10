@@ -10,7 +10,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
-	<groupId>order-delivery-services</groupId>
+	<groupId>order-address-services</groupId>
 	<artifactId>demo-sales</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Order-Servcies</name>

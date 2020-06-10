@@ -1,24 +1,26 @@
 server:
-  port: 8082
+  compression:
+    enabled: true
+  port: 8084
 
 spring:
   application:
-    name: kitchen-service
+    name: delivery-service
   kafka:
+    consumer:
+      bootstrap-servers: localhost:9092
+      group-id: order-service
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
     producer:
       bootstrap-servers: localhost:9092
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
-    consumer:
-      bootstrap-servers: localhost:9092
-      group-id: kitchen-service
-      auto-offset-reset: earliest
-      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
   datasource:
-        url: jdbc:mysql://localhost:3306/Sales-order
-        username: root
-        password:
+          url: jdbc:mysql://localhost:3306/Sales-order
+          username: root
+          password:
   jpa:
     show-sql: true
     hibernate:
@@ -30,3 +32,4 @@ spring:
         dialect: org.hibernate.dialect.MySQL5InnoDBDialect
         format_sql: true
         show-sql: true
+

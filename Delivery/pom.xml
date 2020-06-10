@@ -4,13 +4,13 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-		<groupId>order-delivery-services</groupId>
+		<groupId>order-address-services</groupId>
 		<artifactId>demo-sales</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 
-	<groupId>order-delivery-services</groupId>
-	<artifactId>delivery</artifactId>
+	<groupId>order-address-services</groupId>
+	<artifactId>address</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Delivery-service</name>
 	<description>Demo project for Spring Boot</description>
