@@ -2,6 +2,6 @@ package com.example.demo.port;
 
 import com.example.demo.entity.Orders;
 
-public interface IOrderServicePublish {
+public interface IOrderMessagePublisher {
     void sendOrder(Orders orders);
 }

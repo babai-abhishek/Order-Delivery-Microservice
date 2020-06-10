@@ -25,10 +25,10 @@ public class Orders {
 
     private OrderStatusType orderStatus;
 
-    @Column(insertable = false, updatable = false)
+    @Transient
     private String number;
 
-    @Column(insertable = false, updatable = false)
+    @Transient
     private String street;
 
     private int price;

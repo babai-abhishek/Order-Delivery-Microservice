@@ -1,7 +1,7 @@
 package com.example.demo.service;
 
 import com.example.demo.entity.Orders;
-import com.example.demo.port.IOrderServicePublish;
+import com.example.demo.port.IOrderMessagePublisher;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.slf4j.Logger;
@@ -11,9 +11,9 @@ import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 
 @Service
-public class OrderPublishService implements IOrderServicePublish {
+public class OrderMessagePublishService implements IOrderMessagePublisher {
 
-    private static final Logger logger = LoggerFactory.getLogger(OrderPublishService.class);
+    private static final Logger logger = LoggerFactory.getLogger(OrderMessagePublishService.class);
 
     @Autowired
     private KafkaTemplate kafkaTemplate;

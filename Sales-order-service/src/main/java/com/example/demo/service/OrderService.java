@@ -2,7 +2,7 @@ package com.example.demo.service;
 
 import com.example.demo.entity.type.OrderStatusType;
 import com.example.demo.entity.Orders;
-import com.example.demo.port.IOrderServicePublish;
+import com.example.demo.port.IOrderMessagePublisher;
 import com.example.demo.repository.OrderRepository;
 import org.dozer.DozerBeanMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +18,7 @@ public class OrderService {
     OrderRepository orderRepository;
 
     @Autowired
-    IOrderServicePublish service;
+    IOrderMessagePublisher service;
 
     @Autowired
     DozerBeanMapper dozer;
