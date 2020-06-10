@@ -2,6 +2,7 @@ package entity;
 
 import com.example.demo.entity.type.CookingType;
 import com.example.demo.entity.type.OrderStatusType;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
@@ -25,28 +26,19 @@ public class Orders {
 
     private OrderStatusType orderStatus;
 
-    private String number;
-
-    private String street;
+    @OneToOne(mappedBy = "order", cascade = CascadeType.ALL)
+    @JsonBackReference
+    private Address address;
 
     private int price;
 
-    public String getNumber() {
-        return number;
+    public Address getAddress() {
+        return address;
     }
 
-    public void setNumber(String number) {
-        this.number = number;
+    public void setAddress(Address address) {
+        this.address = address;
     }
-
-    public String getStreet() {
-        return street;
-    }
-
-    public void setStreet(String street) {
-        this.street = street;
-    }
-
 
     public String getStatusDescription() {
         return statusDescription;

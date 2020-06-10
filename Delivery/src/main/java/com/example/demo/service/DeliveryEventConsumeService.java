@@ -30,9 +30,6 @@ public class DeliveryEventConsumeService  implements IDeliveryServcieMessaging {
         try {
             Orders orders = objectMapper.readValue(content, Orders.class);
             Address address =new Address();
-            address.setNumber(orders.getNumber());
-            address.setStreet(orders.getStreet());
-            address.setOrderId(String.valueOf(orders.getOrderId()));
             deliveryRepository.save(address);
             Thread.sleep(5000);
             orders.setOrderStatus(OrderStatusType.DELIVERED);

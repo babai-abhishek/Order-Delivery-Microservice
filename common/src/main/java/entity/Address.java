@@ -1,9 +1,8 @@
 package entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
+import javax.persistence.*;
 
 
 @Entity
@@ -13,11 +12,14 @@ public class Address {
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private long id;
 
-    private String orderId;
-
     private String number;
 
     private String street;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "orderId")
+    @JsonManagedReference
+    private Orders order;
 
     public long getId() {
         return id;
@@ -27,13 +29,6 @@ public class Address {
         this.id = id;
     }
 
-    public String getOrderId() {
-        return orderId;
-    }
-
-    public void setOrderId(String orderId) {
-        this.orderId = orderId;
-    }
 
     public String getNumber() {
         return number;
