@@ -1,8 +1,8 @@
 package com.example.demo.controller;
 
-import com.example.demo.entity.Address;
 import com.example.demo.port.IDeliveryServiceApi;
 import com.example.demo.service.DeliveryService;
+import entity.Address;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 

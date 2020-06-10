@@ -1,10 +1,10 @@
 package com.example.demo.service;
 
-import com.example.demo.entity.Orders;
 import com.example.demo.port.IOrderMessageConsumer;
 import com.example.demo.repository.OrderRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import entity.Orders;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

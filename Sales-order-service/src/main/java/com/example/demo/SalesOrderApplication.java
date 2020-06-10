@@ -5,6 +5,7 @@ import org.dozer.DozerBeanMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.core.env.Environment;
 import springfox.documentation.builders.PathSelectors;
@@ -20,6 +21,7 @@ import java.util.Collections;
 
 @EnableSwagger2
 @SpringBootApplication
+@EntityScan(basePackages = {"entity"})
 public class SalesOrderApplication {
 
     @Autowired

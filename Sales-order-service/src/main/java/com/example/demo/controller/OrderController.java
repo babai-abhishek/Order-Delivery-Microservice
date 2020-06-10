@@ -1,8 +1,8 @@
 package com.example.demo.controller;
 
-import com.example.demo.entity.Orders;
 import com.example.demo.port.IOrderServiceApi;
 import com.example.demo.service.OrderService;
+import entity.Orders;
 import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;

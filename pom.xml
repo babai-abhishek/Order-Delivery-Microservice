@@ -25,6 +25,7 @@
         <module>Kitchen</module>
         <module>Delivery</module>
         <module>Sales-order-service</module>
+        <module>common</module>
     </modules>
 
 	<dependencies>

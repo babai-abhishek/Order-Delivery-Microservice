@@ -1,7 +1,7 @@
 package com.example.demo.repository;
 
-import com.example.demo.entity.Hamburger;
 import com.example.demo.entity.type.HamburgerType;
+import entity.Hamburger;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,9 +1,9 @@
 package com.example.demo.service;
 
-import com.example.demo.entity.Hamburger;
-import com.example.demo.entity.Orders;
 import com.example.demo.entity.type.OrderStatusType;
 import com.example.demo.repository.HamburgerRepository;
+import entity.Hamburger;
+import entity.Orders;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

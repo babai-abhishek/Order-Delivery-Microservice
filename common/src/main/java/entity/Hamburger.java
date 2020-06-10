@@ -1,4 +1,4 @@
-package com.example.demo.entity;
+package entity;
 import com.example.demo.entity.type.HamburgerType;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 

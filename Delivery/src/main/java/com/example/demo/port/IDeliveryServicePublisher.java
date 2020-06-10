@@ -1,7 +1,7 @@
 package com.example.demo.port;
 
-import com.example.demo.entity.Orders;
 import com.fasterxml.jackson.core.JsonProcessingException;
+import entity.Orders;
 
 public interface IDeliveryServicePublisher {
 

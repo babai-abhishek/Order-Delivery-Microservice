@@ -1,4 +1,4 @@
-package com.example.demo.entity;
+package entity;
 
 import com.example.demo.entity.type.CookingType;
 import com.example.demo.entity.type.OrderStatusType;
@@ -9,7 +9,6 @@ import java.util.List;
 
 @Entity
 public class Orders {
-
 
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)

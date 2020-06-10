@@ -5,6 +5,12 @@ spring:
   application:
     name: order-service
   kafka:
+    consumer:
+          bootstrap-servers: localhost:9092
+          group-id: order-service
+          auto-offset-reset: earliest
+          key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+          value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
     producer:
       bootstrap-servers: localhost:9092
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
@@ -33,7 +39,7 @@ spring:
   jpa:
     show-sql: true
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
     properties:

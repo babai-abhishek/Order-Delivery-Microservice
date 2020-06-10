@@ -1,6 +1,6 @@
 package com.example.demo.port;
 
-import com.example.demo.entity.Orders;
+import entity.Orders;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;

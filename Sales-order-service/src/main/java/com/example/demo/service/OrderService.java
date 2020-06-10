@@ -1,9 +1,9 @@
 package com.example.demo.service;
 
 import com.example.demo.entity.type.OrderStatusType;
-import com.example.demo.entity.Orders;
 import com.example.demo.port.IOrderMessagePublisher;
 import com.example.demo.repository.OrderRepository;
+import entity.Orders;
 import org.dozer.DozerBeanMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
