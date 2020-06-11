@@ -13,7 +13,7 @@ Kafka, Zookeeper, MySQL
 **Steps**
 1. clean and build
 2. Run MySQL
-3. Change the ports for mysql db and others according to your needs into the **applicattion.yml** files. Give DB name according to your choice
+3. Change the ports for mysql db and others according to your needs into the **application.yml** files. Give DB name according to your choice
 4. Run Kafka
 5. Add 3 topics into Kafka as - **orderservice**, **deliveryservice**, **orderservicecallback** with no of partition as 1 and replication factor as 1 as well
 6. Run all 3 applications
